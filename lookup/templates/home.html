@@ -3,11 +3,18 @@
 
 {% block content %}
 
-
-
+	<br>
 	<h1>Hello World!</h1>
+	<br>
 
-
-
+	{% if api %}
+		{% if api == "Error..." %}
+			There was an error, please try again...
+		{% else %}
+			Air Quality:	{{api.0.AQI}}<br><br>
+			Area:	{{api.0.ReportingArea}}<br><br>
+			Category:	{{api.0.Category.Name}}<br><br>
+		{% endif %}	
+	{% endif %}
 	
 {% endblock %}
